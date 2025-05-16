@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TehnoStom2.RegistrationPage"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="5">
+
+        <Label 
+            Text="Регистрация"
+            FontSize="40" />
+
+        <Entry
+            x:Name="FirstNameEntry"
+            Placeholder="Имя"/>
+
+        <Entry
+            x:Name="MiddleNameEntry"
+            Placeholder="Отчество (Если есть)"/>
+        
+        <Entry
+            x:Name="LastNameEntry"
+            Placeholder="Фамилия"/>
+
+        <Entry
+            x:Name="LoginEntry"
+            Placeholder="Имя пользователя"/>
+        <Entry
+            x:Name="PasswordEntry"
+            Placeholder="Пароль"/>
+
+        <Entry
+            x:Name="PhoneEntry"
+            Placeholder="Телефон"/>
+
+        <Entry
+            x:Name="SpecializationEntry"
+            Placeholder="Специализация"/>
+
+        <Entry
+            x:Name="RoleEntry"
+            Placeholder="Роль"/>
+
+        <Button
+            Text="Готово"
+            Clicked="RegistrerUser"/>
+        
+        <Button
+            Text="Назад"
+            Clicked="GoBack"/>
+
+    </VerticalStackLayout>
+</ContentPage>

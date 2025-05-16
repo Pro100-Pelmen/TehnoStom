@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TehnoStom2.EmploeerOrderDetailPage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView Padding="20">
+        <StackLayout Spacing="15">
+
+            <Label Text="Детали задания:" FontSize="16" FontAttributes="Bold"/>
+
+            <Label x:Name="OrderTitleLabel" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="OrderScoreLabel"/>
+            <Label x:Name="OrderStatusLabel"/>
+            <Label x:Name="OrderSpecializationLabel"/>
+            <Label x:Name="OrderRequirementsLabel"/>
+
+            <StackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+                <Button x:Name="TakeOrderButton" 
+                Text="Взять задание" 
+                Clicked="TakeOrder"
+                IsVisible="False"/>
+
+                <Button x:Name="CancelOrderButton" 
+                Text="Отменить задание" 
+                Clicked="CancelOrder"
+                IsVisible="False"/>
+
+                <Button x:Name="CompleteOrderButton" 
+                Text="Завершить задание" 
+                Clicked="CompleteOrder"
+                IsVisible="False"/>
+            </StackLayout>
+
+            <Button
+                x:Name="GoBackButton"
+                Text="Назад"
+                Clicked="GoBack"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

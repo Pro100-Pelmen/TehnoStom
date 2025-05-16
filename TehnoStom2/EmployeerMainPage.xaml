@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:entities="clr-namespace:TehnoStom2.Entities"
+             x:Class="TehnoStom2.EmployeerMainPage"
+             Shell.NavBarIsVisible="False">
+
+    <RefreshView x:Name="RefreshView" Refreshing="RefreshView_Refreshing">
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+
+                <Frame BorderColor="LightBlue" Padding="10">
+                    <StackLayout>
+                        <Label x:Name="EmployeeInfoLabel" FontSize="16" FontAttributes="Bold"/>
+                        <Label x:Name="EmployeeScoreLabel" FontSize="14"/>
+                        <Label x:Name="EmployeeSpecializationLabel" FontSize="14"/>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Доступные задания:" FontSize="16" FontAttributes="Bold"/>
+
+                <CollectionView x:Name="OrderCollectionView"
+                              SelectionMode="Single"
+                              SelectionChanged="OnOrderSelected">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            
+                                <StackLayout Spacing="5">
+                                    <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Status}"/>
+                                    <Label Text="{Binding Score}"/>
+                                    <Label Text="{Binding TechnicalRequirements}" MaxLines="2" LineBreakMode="TailTruncation"/>
+                                </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <ActivityIndicator x:Name="LoadingIndicator" IsRunning="False"/>
+
+                <Button
+                    x:Name="LogOutButton"
+                    Text="Выйти"
+                    Clicked="LogOut"/>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>
